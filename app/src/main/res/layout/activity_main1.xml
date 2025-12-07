@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Campo para introducir el valor -->
+    <EditText
+        android:id="@+id/etCantidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo para introducir el tipo de cambio -->
+    <EditText
+        android:id="@+id/etCambio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Cambio (ej: 0.92)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/etCantidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- RadioButtons para elegir dirección -->
+    <RadioGroup
+        android:id="@+id/rgOpciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/etCambio"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp">
+
+        <RadioButton
+            android:id="@+id/rbDolEu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Dólares a euros" />
+
+        <RadioButton
+            android:id="@+id/rbEuDol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Euros a dólares" />
+
+    </RadioGroup>
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Resultado"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_green_dark"
+        app:layout_constraintTop_toBottomOf="@id/rgOpciones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:gravity="center" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
